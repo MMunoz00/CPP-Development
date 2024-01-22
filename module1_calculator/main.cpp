@@ -33,18 +33,18 @@ int division(int opA, int opB) {
     return value;
 }
 int main() {
-    cout << "This is a demonstration of a Calculator.";
-    cout << "========================================";
-    cout << "Demonstrate Addition (5 + 4 = 9)";
+    cout << "This is a demonstration of a Calculator.\n";
+    cout << "========================================\n";
+    cout << "Demonstrate Addition (5 + 4 = 9)\n";
     cout << addition(5, 4);
 
-    cout << "Demonstrate Subtraction (10 - 3 = 7)";
+    cout << "\nDemonstrate Subtraction (10 - 3 = 7)\n";
     cout << subtration(10, 3);
 
-    cout << "Demonstrate Multiplication (3 * 2 = 6)";
+    cout << "\nDemonstrate Multiplication (3 * 2 = 6)\n";
     cout << multiplication(3, 2);
 
-    cout << "Demonstrate Division (8 / 4 = 2)";
+    cout << "\nDemonstrate Division (8 / 4 = 2)\n";
     cout << division(8, 4);
 
     return 0;
