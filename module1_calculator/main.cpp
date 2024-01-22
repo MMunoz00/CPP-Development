@@ -35,8 +35,12 @@ int subtration(int opA, int opB) {
     return value;
 }
 
-int multiplication() {
+int multiplication(int opA, int opB) {
+    int value;
 
+    value = opA * opB;
+
+    return value;
 }
 
 int division() {
