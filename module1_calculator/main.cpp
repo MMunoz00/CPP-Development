@@ -43,6 +43,10 @@ int multiplication(int opA, int opB) {
     return value;
 }
 
-int division() {
-    
+int division(int opA, int opB) {
+    int value;
+
+    value = opA / opB;
+
+    return value;
 }
