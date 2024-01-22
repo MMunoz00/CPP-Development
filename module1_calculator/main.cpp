@@ -57,6 +57,21 @@ int division(int opA, int opB) {
 
     return value;
 }
+/*
+    Calculator allows the user to select a mathematical operation
+    and two values to perform in that operation
+    Parameters - operation, opA, opB (all parameters are integers)
+    operation is chosen from a list of values and is compared
+    to preset definitions to select the user's chosen operation
+    opA is value 1 and opB is value 2, these values are to be used
+    in the user's chosen operation
+    Output - value (value is an integer)
+    value is the results of the user's chosen mathematical operation
+    using the user's chosen values
+*/
+int calculator(int operation, int opA, int opB) {
+
+}
 
 int main() {
     cout << "This is a demonstration of a Calculator.\n";
