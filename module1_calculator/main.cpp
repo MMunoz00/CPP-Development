@@ -19,8 +19,12 @@ int main() {
     return 0;
 }
 
-int addition() {
+int addition(int opA, int opB) {
+    int value;
 
+    value = opA + opB;
+
+    return value;
 }
 
 int subtration() {
