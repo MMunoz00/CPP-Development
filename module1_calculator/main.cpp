@@ -34,7 +34,7 @@ int division(int opA, int opB) {
 }
 int main() {
     cout << "This is a demonstration of a Calculator.\n";
-    cout << "\n========================================\n";
+    cout << "========================================\n";
     cout << "\nDemonstrate Addition (5 + 4 = 9)\n";
     cout << addition(5, 4);
     cout << "\n";
