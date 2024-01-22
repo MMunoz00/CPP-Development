@@ -27,8 +27,12 @@ int addition(int opA, int opB) {
     return value;
 }
 
-int subtration() {
+int subtration(int opA, int opB) {
+    int value;
 
+    value = opA - opB;
+
+    return value;
 }
 
 int multiplication() {
