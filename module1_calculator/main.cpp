@@ -36,16 +36,16 @@ int main() {
     cout << "This is a demonstration of a Calculator.\n";
     cout << "\n========================================\n";
     cout << "\nDemonstrate Addition (5 + 4 = 9)\n";
-    cout << addition(5, 4);
+    cout << addition(5, 4)+"\n";
 
     cout << "\nDemonstrate Subtraction (10 - 3 = 7)\n";
-    cout << subtration(10, 3);
+    cout << subtration(10, 3)+"\n";
 
     cout << "\nDemonstrate Multiplication (3 * 2 = 6)\n";
-    cout << multiplication(3, 2);
+    cout << multiplication(3, 2)+"\n";
 
     cout << "\nDemonstrate Division (8 / 4 = 2)\n";
-    cout << division(8, 4);
+    cout << division(8, 4)+"\n";
 
     return 0;
 }
