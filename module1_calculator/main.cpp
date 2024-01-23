@@ -92,7 +92,5 @@ int main() {
     cout << division(8, 4); //Divides 8 by 4, output should be 2
     cout << "\n";
 
-    cout << "Trying to make a merge conflict";
-
     return 0;
 }
