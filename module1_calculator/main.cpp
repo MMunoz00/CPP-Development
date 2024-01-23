@@ -92,9 +92,5 @@ int main() {
     cout << division(8, 4); //Divides 8 by 4, output should be 2
     cout << "\n";
 
-    cout << "We are testing git branches";
-    cout << "Additional testing git branches";
-    cout << "Additional testing even further";
-
     return 0;
 }
