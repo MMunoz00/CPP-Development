@@ -22,7 +22,7 @@ int addition(int opA, int opB) {
     Output - value (value is an integer)
     value is the difference between opA and opB
 */
-int subtration(int opA, int opB) {
+int subtraction(int opA, int opB) {
     int value;
 
     value = opA - opB;
@@ -70,7 +70,26 @@ int division(int opA, int opB) {
     using the user's chosen values
 */
 int calculator(int operation, int opA, int opB) {
+    int value;
 
+    if (operation == 1) {
+        value = addition(opA, opB);
+    }
+    else if (operation == 2) {
+        value = subtraction(opA, opB);
+    }
+    else if (operation == 3) {
+        value = multiplication(opA, opB);
+    }
+    else if (operation == 4) {
+        value = division(opA, opB);
+    }
+    else {
+        cout << "Invalid Operation";
+        return 0;
+    }
+
+    return value;
 }
 
 int main() {
@@ -81,7 +100,7 @@ int main() {
     cout << "\n";
 
     cout << "\nDemonstrate Subtraction (10 - 3 = 7)\n";
-    cout << subtration(10, 3); //Subtracts 3 from 10, output should be 7
+    cout << subtraction(10, 3); //Subtracts 3 from 10, output should be 7
     cout << "\n";
 
     cout << "\nDemonstrate Multiplication (3 * 2 = 6)\n";
@@ -91,6 +110,34 @@ int main() {
     cout << "\nDemonstrate Division (8 / 4 = 2)\n";
     cout << division(8, 4); //Divides 8 by 4, output should be 2
     cout << "\n";
+
+    int end = 0;
+    while (end == 0) {
+
+        int num1;
+        cout << "\nPlease select a first number:\n";
+        cin >> num1;
+        cout << "\n";
+
+        int op;
+        cout << "\nPlease select an operation:\n";
+        cout << "1. Addition\n";
+        cout << "2. Subtraction\n";
+        cout << "3. Multiplication\n";
+        cout << "4. Division\n";
+        cin >> op;
+        cout << "\n";
+
+        int num2;
+        cout << "\nPlease select a second number:\n";
+        cin >> num2;
+        cout << "\n";
+
+        end = calculator(op, num1, num2);
+
+    }
+
+    cout << end;
 
     return 0;
 }
