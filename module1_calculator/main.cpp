@@ -82,7 +82,11 @@ bool checkRun() {
     return false;
 }
 /*
-
+    CheckDouble determines if the user input is of type Double by converting
+    the string input into a double to ensure that no program errors occur 
+    and that the program continues to run smoothly.
+    Parameters - input (string)
+    Output - num (double)
 */
 double checkDouble(string input) {
     double num;
@@ -101,7 +105,12 @@ double checkDouble(string input) {
     return num;
 }
 /*
-
+    CheckOperator determines if the user input is of type Double by converting
+    the string input into a double to ensure that no program errors occur 
+    and that the program continues to run smoothly, and checks if the chosen
+    input matches the options in the given list of operations.
+    Parameters - input (string)
+    Output - num (double)
 */
 double checkOperator(string input) {
     double num;
@@ -154,10 +163,6 @@ double calculator(double operation, double opA, double opB) {
             return 0;
         }
         value = division(opA, opB);
-    }
-    else {
-        cout << "Invalid Operation\n";
-        return 0;
     }
 
     return value;
