@@ -186,7 +186,7 @@ int main() {
     cout << "\nDemonstrate Division (8 / 4 = 2)\n";
     cout << division(8, 4); //Divides 8 by 4, output should be 2
     cout << "\n";
-    
+
     double result;
     bool run = true;
     while (run == true) {
@@ -218,6 +218,7 @@ int main() {
             end = 1;
         }
 
+        cout << "\nresult = ";
         cout << result;
 
         run = checkRun();
