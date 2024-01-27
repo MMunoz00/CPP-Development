@@ -1,15 +1,16 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 /*  
     Addition adds opA and opB together and outputs the result
-    Parameters - opA, opB (both parameters are integers)
+    Parameters - opA, opB (both parameters are doubles)
     opA is value 1 and opB is value 2 to be added to value 1
-    Output - value (value is an integer)
+    Output - value (value is a double)
     value is the sum of opA and opB
 */
-int addition(int opA, int opB) {
-    int value;
+double addition(double opA, double opB) {
+    double value;
 
     value = opA + opB;
 
@@ -17,13 +18,13 @@ int addition(int opA, int opB) {
 }
 /*
     Subtraction subtracts opB from opA and outputs the result
-    Parameters - opA, opB (both parameters are integers)
+    Parameters - opA, opB (both parameters are doubles)
     opA is value 1 and opB is value 2 to be subtracted from value 1
-    Output - value (value is an integer)
+    Output - value (value is a double)
     value is the difference between opA and opB
 */
-int subtraction(int opA, int opB) {
-    int value;
+double subtraction(double opA, double opB) {
+    double value;
 
     value = opA - opB;
 
@@ -31,13 +32,13 @@ int subtraction(int opA, int opB) {
 }
 /*
     Multiplication multiplies opA and opB together and outputs the result
-    Parameters - opA, opB (both parameters are integers)
+    Parameters - opA, opB (both parameters are doubles)
     opA is value 1 and opB is value 2 to be multiplied with value 1
-    Output - value (value is an integer)
+    Output - value (value is a double)
     value is the product of multiplying opA and opB
 */
-int multiplication(int opA, int opB) {
-    int value;
+double multiplication(double opA, double opB) {
+    double value;
 
     value = opA * opB;
 
@@ -45,32 +46,98 @@ int multiplication(int opA, int opB) {
 }
 /*
     Division divides opA by opB and outputs the result
-    Parameters - opA, opB (both parameters are integers)
+    Parameters - opA, opB (both parameters are doubles)
     opA is value 1 and opB is value 2 of which value 1 is to be divided by
-    Output - value (value is an integer)
+    Output - value (value is a double)
     value is the quotient of opA with opB
 */
-int division(int opA, int opB) {
-    int value;
+double division(double opA, double opB) {
+    double value;
 
     value = opA / opB;
 
     return value;
 }
 /*
+    checkRun asks the user if they want to continue using the calculator
+    program, takes no parameters, and contains error handling to ensure
+    no program crashes occur.
+*/
+bool checkRun() {
+    char check;
+    while (check != 'y' || check != 'n') {
+        cout << "\n\nContinue using calculator? Y or N?\n";
+        cin >> check;
+        if (check == 'y' || check == 'Y') {
+            return true;
+        }
+        else if (check == 'n' || check == 'N') {
+            check = 'n';
+            return false;
+        }
+        else {
+            cout << "Please enter Y or N";
+        }
+    }
+    return false;
+}
+/*
+
+*/
+double checkDouble(string input) {
+    double num;
+    bool error = true;
+    while (error == true) {
+        try {
+            num = stod(input);
+        }
+        catch (invalid_argument) {
+            cerr << "Invalid input\n";
+            cin >> input;
+            continue;
+        }
+        error = false;
+    }
+    return num;
+}
+/*
+
+*/
+double checkOperator(string input) {
+    double num;
+    bool error = true;
+    while (error == true) {
+        try {
+            num = stod(input);
+        }
+        catch (invalid_argument) {
+            cerr << "Invalid input\n";
+            cin >> input;
+            continue;
+        }
+        if (num > 4 || num < 1) {
+            cout << "Invalid input\n";
+            cin >> input;
+            continue;
+        }
+        error = false;
+    }
+    return num;
+}
+/*
     Calculator allows the user to select a mathematical operation
     and two values to perform in that operation
-    Parameters - operation, opA, opB (all parameters are integers)
+    Parameters - operation, opA, opB (all parameters are doubles)
     operation is chosen from a list of values and is compared
     to preset definitions to select the user's chosen operation
     opA is value 1 and opB is value 2, these values are to be used
     in the user's chosen operation
-    Output - value (value is an integer)
+    Output - value (value is a double)
     value is the results of the user's chosen mathematical operation
     using the user's chosen values
 */
-int calculator(int operation, int opA, int opB) {
-    int value;
+double calculator(double operation, double opA, double opB) {
+    double value;
 
     if (operation == 1) {
         value = addition(opA, opB);
@@ -82,10 +149,14 @@ int calculator(int operation, int opA, int opB) {
         value = multiplication(opA, opB);
     }
     else if (operation == 4) {
+        if (opB == 0) {
+            cout << "Cannot Divide by 0\n";
+            return 0;
+        }
         value = division(opA, opB);
     }
     else {
-        cout << "Invalid Operation";
+        cout << "Invalid Operation\n";
         return 0;
     }
 
@@ -110,34 +181,41 @@ int main() {
     cout << "\nDemonstrate Division (8 / 4 = 2)\n";
     cout << division(8, 4); //Divides 8 by 4, output should be 2
     cout << "\n";
+    double result;
+    bool run = true;
+    while (run == true) {
+        double end = 0;
+        while (end == 0) {
+            
+            double num1;
+            string input;
+            cout << "\nPlease enter a number\n";
+            cin >> input;
+            num1 = checkDouble(input);
+            
 
-    int end = 0;
-    while (end == 0) {
+            double op;
+            cout << "\nPlease select an operation:\n";
+            cout << "1. Addition\n";
+            cout << "2. Subtraction\n";
+            cout << "3. Multiplication\n";
+            cout << "4. Division\n";
+            cin >> input;
+            op = checkOperator(input);
 
-        int num1;
-        cout << "\nPlease select a first number:\n";
-        cin >> num1;
-        cout << "\n";
+            double num2;
+            cout << "\nPlease enter a second number:\n";
+            cin >> input;
+            num2 = checkDouble(input);
 
-        int op;
-        cout << "\nPlease select an operation:\n";
-        cout << "1. Addition\n";
-        cout << "2. Subtraction\n";
-        cout << "3. Multiplication\n";
-        cout << "4. Division\n";
-        cin >> op;
-        cout << "\n";
+            result = calculator(op, num1, num2);
+            end = 1;
+        }
 
-        int num2;
-        cout << "\nPlease select a second number:\n";
-        cin >> num2;
-        cout << "\n";
+        cout << result;
 
-        end = calculator(op, num1, num2);
-
+        run = checkRun();
     }
-
-    cout << end;
 
     return 0;
 }
